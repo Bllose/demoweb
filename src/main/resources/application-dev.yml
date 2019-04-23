@@ -1,0 +1,28 @@
+spring:
+  datasource:
+        # 驱动配置信息
+        url: jdbc:oracle:thin:@192.168.81.42:1521/NINVOICE
+        username: jrwz2_zx
+        password: jrwz2_zx
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+
+        # 连接池的配置信息
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+env:
+  currect: dev
+bllose:
+  test:
+    name: bllose

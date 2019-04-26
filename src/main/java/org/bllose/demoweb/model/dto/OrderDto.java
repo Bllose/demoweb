@@ -17,6 +17,8 @@ public class OrderDto {
         this.companyName = companyName;
     }
 
+    public OrderDto(){};
+
     public String toString(){
         StringBuffer sb = new StringBuffer();
         sb.append("{ ");

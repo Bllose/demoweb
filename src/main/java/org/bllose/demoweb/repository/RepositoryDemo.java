@@ -1,6 +1,7 @@
 package org.bllose.demoweb.repository;
 
 import org.bllose.demoweb.model.dto.OrderDto;
+import org.bllose.demoweb.model.dto.OrderRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,12 @@ public class RepositoryDemo {
                         rs.getString("ORDER_NO"), rs.getString("PRODUCT_ID"), rs.getString("QYMC")));
 
         return result;
+    }
+
+    public List<OrderDto> searchTop5(){
+        String sql = "select ID, ORDER_NO, NSRSBH, QYMC, PRODUCT_ID from zx_bank_order_info where rowNum < 5";
+
+        return jdbcTemplate.query(sql, new OrderRowMapper());
     }
 
     /**

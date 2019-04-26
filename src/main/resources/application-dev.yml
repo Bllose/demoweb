@@ -26,3 +26,19 @@ env:
 bllose:
   test:
     name: bllose
+quartz:
+  job1:
+    name: test
+    gourp: testG
+    function: sayHello
+    trigger:
+      name: test
+      time: 0 31 10 * * ?
+#logging:
+#  level:
+#    root: trace
+#  path: /E:/logs/webDemo
+#  file: webDemo.log
+#  pattern:
+#    file: file %d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n
+#    console: concole %d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n
